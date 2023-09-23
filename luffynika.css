@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
 *{
 	box-sizing: border-box;
 	margin:0;
@@ -7,8 +10,7 @@
 }
 html{
 	scroll-behavior: smooth;
-		background: black;
-
+	background: black;
 }
 
 header{
@@ -277,6 +279,13 @@ section{
 	header{
 	padding: 12px 20px;
 	}
+	header.sticky{
+	height: calc(3.5rem + 1rem);
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(30px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+}
 	section{
 		padding: 100px 20px;
 	}
@@ -777,38 +786,96 @@ section1{
 
 
 section3{
-	padding: 70px 100px 100px 100px;
+	padding: 70px 70px;
 }
 
 .roadmap{
-	position: relative;
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
 	background: #000;
 	font-family: 'Bubblegum Sans', cursive;
 	overflow: hidden;
 }
 
 .lantern{
-	padding: 0 70px;
+	z-index: 100;
+	padding: 0 100px;
 	width: 100%;
 	height: 150px;
 	display: flex;
 	justify-content: space-between;
 	color: white;
-	animation: lanternfly 3s linear infinite;
 	font-size: 4.8em;
 	align-items: center;
+	animation: lanternfly 4s linear infinite;
 }
 .lantern img{
 	width: 90px;
 	height: 140px;
-	opacity: 0.9;
-	
+}
+.roadmain{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	margin-top: 2%;
+}
+/*::before{
+	content: '';
+	position: absolute;
+	inset: 60px;
+	border: 4px solid transparent;
+	border-left: 4px solid orange;
+	border-right: 4px solid white;
+	border-radius: 50%;
+	animation: rotatel 5s linear infinite;
+	z-index: 1;
+	pointer-events: none;
+	width: 300px;
+	height: 300px;
+}
+@keyframes rotatel{
+	0%{
+		rotate: 0deg;
+	}
+	100%{
+		rotate: 360deg;
+	}
+}*/
+.roadvic img{
+	z-index: 99;
+	width: 300px;
+	height: calc(500px + 300px);
+	animation: viclarn 7s linear infinite;
+}
+@keyframes viclarn {
+	0%{
+		transform: translateY(0);
+	}
+	25%{
+		transform: translateY(30px);
+	}
+	50%{
+		transform: translateY(0);
+	}
+	75%{
+		transform: translateY(-30px);
+	}
+	100%{
+		transform: translateY(0);
+	}
 }
 
+.roadcontent{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+}
 
 @keyframes lanternfly {
 	0%{
@@ -828,12 +895,300 @@ section3{
 	}
 }
 
+.pharse1{
+	padding-top: 230px ;
+	position: absolute;
+	display: flex;
+	overflow: hidden;
+	padding-left: 3%;
+}
+.phali1{
+	width: 350px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.phaimg1 img{
+	width: 100px;
+	height: 130px;
+	transform: scaleX(-1);
+	animation: rlrotate 5s linear infinite;
+}
 
+@keyframes rlrotate{
+	0%{
+		rotate: 0deg;
+		opacity: 0.8;
+	}
+	25%{
+		rotate: 30deg;
+		opacity: 0.85;
+	}
+	50%{
+		rotate: 0deg;
+		opacity: 0.9;
+	}
+	75%{
+		rotate: -30deg;
+		opacity: 0.95;
+	}
+	100%{
+		rotate: 0deg;
+		opacity: 1;
+	}
+}
+
+.phatext{
+	height: 90px;
+	display: flex;
+	align-items: flex-end;
+	color: #fff;
+	font-size: 1.1em;
+	font-family: 'Patua One', cursive;
+}
+.phamain{
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+.phamain p{
+	color: white;
+	font-size: 1.3em;
+	margin-left: 5%;
+	line-height: 20px;
+	margin-top: 5%;
+	font-family: 'Fredericka the Great', cursive;
+	text-shadow: 5px 5px 15px rgba(242, 184, 41, 1.0);
+}
+.phamain:before{
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 1px;
+	height: 100%;
+	background: linear-gradient(to top, transparent, orange);
+	animation: opaci 3s linear infinite;
+}
+@keyframes opaci{
+	0%{
+		opacity: 0.3;
+	}
+	50%{
+		opacity: 0.6;
+	}
+	100%{
+		opacity: 1;
+	}
+}
 @media (max-width: 1040px){
 	section3{
 		padding: 90px 20px;
 	}
+	.lantern{
+		display: flex;
+		justify-content: center;
+		font-size: 4.3em;
+	}
+	.lantern img{
+		display:none;
+	}
 }
+@media (max-width: 768px){
+	.pharse1{
+		padding-left: 2.9%;
+	}
+	.roadvic img{
+		filter: blur(3px);
+	}
+}
+@media (max-width: 480px){
+	.phali1{
+		width: 260px;
+	}
+	.phaimg1 img{
+		width: 85px;
+		height: 110px;
+	}
+	.phatext{
+		font-size: 1em;
+		height: 80px;
+	}
+	.phamain p{
+		font-size: 1.1em;
+	}
+}
+
+
+.pharse2{
+	padding-top: 430px ;
+	position: absolute;
+	display: flex;
+	overflow: hidden;
+	padding-left: 60%;
+}
+.phali2{
+	width: 350px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.phaimg2 img{
+	width: 100px;
+	height: 130px;
+	transform: scaleX(-1);
+	animation: rlrotate 5s linear infinite;
+}
+@media (max-width: 1310px){
+	.pharse2{
+		padding-left: 50%;
+		padding-top: 550px;
+	}
+}
+@media (max-width: 950px){
+	section3{
+		padding: 55px 20px;
+	}
+	.pharse2{
+		padding-left: 50%;
+		padding-top: 650px;
+	}
+	.phali2{
+		width: 260px;
+	}
+	.roadvic{
+		margin-top: 12%;
+		margin-right: 7%;
+	}
+	.lantern h{
+		font-size: 1.4em;
+	}
+}
+@media (max-width: 768px){
+	.pharse1{
+		padding-top: 200px;
+	}
+	.pharse2{
+		padding-left: 2.9%;
+		padding-top: 510px;
+	}
+	.roadvic{
+		margin-top: 12%;
+		margin-left: 50%;
+	}
+	.lantern h{
+		font-size: 1.2em;
+	}
+	.roadvic{
+		margin-top: 15%;
+	}
+}
+
+
+@media (max-width: 480px){
+	.pharse2{
+		padding-top: 480px;
+	}
+	.phali2{
+		width: 260px;
+	}
+	.phaimg2 img{
+		width: 85px;
+		height: 110px;
+	}
+	.roadvic{
+		margin-top: 0%;
+		margin-left: 0%;	
+}
+	.lantern h{
+			font-size: 1.1em;
+		}
+	.roadvic img{
+		opacity: 0.75;
+	}
+}
+
+.pharse3{
+	padding-top: 680px ;
+	position: absolute;
+	display: flex;
+	overflow: hidden;
+	padding-left: 10%;
+}
+.phali3{
+	width: 260px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.phaimg3 img{
+	width: 100px;
+	height: 130px;
+	transform: scaleX(-1);
+	animation: rlrotate 5s linear infinite;
+}
+@media (max-width: 950px){
+	.pharse3{
+		padding-left: 9%;
+		padding-top: 950px;
+	}
+}
+@media (max-width: 768px){
+	.pharse3{
+		padding-left: 2.9%;
+		padding-top: 790px;
+	}
+}
+@media (max-width: 480px){
+	.pharse3{
+		padding-top: 750px;
+	}
+	.phaimg3 img{
+		width: 85px;
+		height: 110px;
+	}
+	.roadvic{
+		margin-top: 17%;
+	}
+}
+
+
+section4{
+	padding: 70px 70px;
+}
+
+.product{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background: #000;
+	font-family: 'Bubblegum Sans', cursive;
+	overflow: hidden;
+}
+.products{
+	color: white;
+	font-size: 5em;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .gallery {
   display: flex;
