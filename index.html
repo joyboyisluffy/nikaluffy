@@ -119,9 +119,10 @@
                 <img class="xtext" src="sgnika.png">
                 <img class="xlogo" src="JOYBOY.svg">
               </div>
-              <div class="tokentent">
+              <div class="tokentent" style="z-index: 900;">
                 <h1 data-aos="fade-left">Contract Adress of $LUFFY</h1>
-                <h2 data-aos="fade-right">0x4e428E01F31F4C5BAa50da05A2384F48dfb1d78B</h2>
+                <h2 data-aos="fade-right">0x4e428...dfb1d78B<i class="fa fa-clone" id="copyIcon" style="font-size:19px" aria-hidden="true"></i></h2>
+                <h id="contentToCopy" class="copied" style="display: none;">0x4e428E01F31F4C5BAa50da05A2384F48dfb1d78B</h>
                 <h1 data-aos="fade-left">Total Supply</h1>
                 <h2 data-aos="fade-right">420,000,000,000 LUFFY</h2>
                 <h1 data-aos="fade-left">Buy/Sell Tax</h1>
@@ -386,6 +387,26 @@
           <h>2023 Nika Luffy. Powered by JOYBOY</h>
       </div>
     </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var contentToCopy = document.getElementById('contentToCopy');
+    var copyIcon = document.getElementById('copyIcon');
+
+    copyIcon.addEventListener('click', function () {
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = contentToCopy.textContent;
+
+        document.body.appendChild(tempTextArea);
+
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999);
+
+        document.execCommand('copy');
+
+        document.body.removeChild(tempTextArea);
+    });
+});
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({duration: 1500});</script><script src="nikaluffy.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   </body>
 </html>
